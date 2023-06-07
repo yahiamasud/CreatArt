@@ -10,7 +10,6 @@ const Navbar = () => {
         logOut()
             .then()
     }
-    console.log(user)
     return (
         <div className="navbar bg-slate-500 text-white">
             <div className="navbar-start">

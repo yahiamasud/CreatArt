@@ -1,17 +1,19 @@
-
-const ClsCard = () => {
+import './clscard.css'
+import { Link } from 'react-router-dom';
+const ClsCard = ({data}) => {
+    const {name,image,price,available,seats} = data
     return (
         <div>
              <div className="card mx-auto w-96 bg-base-100 shadow-xl">
-                <figure><img src="" alt="Shoes" /></figure>
+                <figure><img className='clardimg' src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
-                       className:- Shoes!
-                        <div className="badge badge-secondary">Price:-NEW</div>
+                       className:- {name}
+                        <div className="badge badge-secondary">Price:{price}</div>
                     </h2>
-                    <p>instretorName:- If a dog chews shoes whose shoes does he choose?</p>
+                    <p>instretorName:-kamal and jamal</p>
                     <div className="card-actions justify-end">
-                      {/* <link to='/Class'><button className='btn btn-success'>Details</button></link> */}
+                      <Link to='/'><button className='btn btn-success'>Details</button></Link>
                     </div>
                 </div>
             </div>

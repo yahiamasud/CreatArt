@@ -1,17 +1,19 @@
 import React from 'react';
+import { useEffect, useState } from "react";
+import './instructors.css'
 
 const Instructors = () => {
 
-    // const [instructors, setInstructors] = useStat([]);
+    const [instructors, setInstructors] = useState([]);
 
-    // useEffect(() => {
-    //     fetch('')
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             // console.log(data);
-    //             setInstructors(data);
-    //         })
-    // }, [])
+    useEffect(() => {
+        fetch('http://localhost:5000/Instructors')
+            .then((res) => res.json())
+            .then((data) => {
+                // console.log(data);
+                setInstructors(data);
+            })
+    }, [])
     return (
         <div className='mx-auto m-10'>
             <h1 className='text-center text-5xl font-bold mb-10'>All Instructors</h1>
@@ -20,34 +22,21 @@ const Instructors = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>#</th>
+                            <th>Photo</th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Email</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-                        <tr>
-                            <th>1</th>
-                            <td>Cy Ganderton</td>
-                            <td>Quality Control Specialist</td>
-                            <td>Blue</td>
-                        </tr>
-                        {/* row 2 */}
-                        <tr>
-                            <th>2</th>
-                            <td>Hart Hagerty</td>
-                            <td>Desktop Support Technician</td>
-                            <td>Purple</td>
-                        </tr>
-                        {/* row 3 */}
-                        <tr>
-                            <th>3</th>
-                            <td>Brice Swyre</td>
-                            <td>Tax Accountant</td>
-                            <td>Red</td>
-                        </tr>
+                        {
+                            instructors.map(instructor => <tr>
+                                <th></th>
+                                <td><img className="img-instor" src={instructor.image} alt="" /></td>
+                                <td>{instructor.name}</td>
+                                <td>{instructor.email}</td>
+                            </tr>)
+                        }
                     </tbody>
                 </table>
             </div>
