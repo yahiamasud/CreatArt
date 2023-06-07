@@ -11,7 +11,7 @@ const Navbar = () => {
             .then()
     }
     return (
-        <div className="navbar bg-slate-500 text-white">
+        <div className="navbar bg-slate-700 text-white">
             <div className="navbar-start">
                     <h2 className='text-2xl font-bold uppercase'>CreactArt</h2>
                 <div className="dropdown">
