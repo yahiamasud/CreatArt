@@ -13,6 +13,8 @@ import Home from './Pages/Home/Home.jsx';
 import Login from './Pages/Login/Login.jsx';
 import Regetetion from './Pages/Regetetion/Regetetion.jsx';
 import AuthProviders from './providers/AuthProviders.jsx';
+import Class from './Pages/Class/Class';
+import Instructors from './Pages/Instructors/Instructors';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
         path:"/Regetetion",
         element:<Regetetion></Regetetion>
       },
+      {
+        path:"/Class",
+        element:<Class></Class>
+      },
+      {
+        path:"/Instructors",
+        element:<Instructors></Instructors>
+      }
     ]
   },
   {

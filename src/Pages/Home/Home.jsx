@@ -1,12 +1,16 @@
 import React from 'react';
 import Bannar from '../../componant/Bannar/Bannar';
-import Card from '../../componant/Card/Card';
+import PopularClass from '../../componant/PopularClass/PopularClass';
+import PopularIntree from '../../componant/PopularIntree/PopularIntree';
+import Mysite from '../../componant/Mysite/Mysite';
 
 const Home = () => {
     return (
         <div>
             <Bannar></Bannar>
-            <Card></Card>
+            <PopularIntree></PopularIntree>
+            <PopularClass></PopularClass>
+            <Mysite></Mysite>
         </div>
     );
 };
