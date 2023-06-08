@@ -7,7 +7,7 @@ const Instructors = () => {
     const [instructors, setInstructors] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/Instructors')
+        fetch('https://assignment-server-12-tau.vercel.app/Instructors')
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);
@@ -21,7 +21,7 @@ const Instructors = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr  className='border-black text-black font-1xl' >
                             <th>#</th>
                             <th>Photo</th>
                             <th>Name</th>
@@ -30,7 +30,7 @@ const Instructors = () => {
                     </thead>
                     <tbody>
                         {
-                            instructors.map(instructor => <tr>
+                            instructors.map(instructor => <tr className='border-black'>
                                 <th></th>
                                 <td><img className="img-instor" src={instructor.image} alt="" /></td>
                                 <td>{instructor.name}</td>

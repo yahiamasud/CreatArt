@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 
 
 const Regetetion = () => {
     const [error, setError] = useState('');
     const { createUser, profile } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSingUp = (event) => {
         event.preventDefault();
@@ -28,12 +29,26 @@ const Regetetion = () => {
 
         createUser(email, password)
             .then(result => {
+                // this is the add creat user
                 const createdUser = result.user;
-                Form.reset();
-
+              
                 profile(name, photo)
                     .then(() => {
-
+                        const saveUser = { name:name, email: email, }
+                        fetch('https://assignment-server-12-yahiamasud.vercel.app/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                        .then(res=>res.json())
+                        .then(data => {
+                            if (data.insertedId) {
+                                Form.reset();
+                                navigate('/');
+                            }
+                        })
                     })
                     .catch((error) => {
 

@@ -6,7 +6,7 @@ const PopularIntree = () => {
      const [popularIntree, setPopularIntree] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/Instructors')
+        fetch('https://assignment-server-12-tau.vercel.app/Instructors')
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);

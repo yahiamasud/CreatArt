@@ -47,15 +47,29 @@ const Login = () => {
         singInGoogle()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
-                navigate(from, { replace: true });
+                const saveUser = { name: loggedUser.displayName, email: loggedUser.email, }
+                fetch('https://assignment-server-12-yahiamasud.vercel.app/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
+                            Form.reset();
+                          
+                        }
+                    })
+                    navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error)
             })
 
     }
-    
+
     return (
         <div className="">
             <h1 className='text-5xl font-bold text-center  p-5'>LOGING</h1>

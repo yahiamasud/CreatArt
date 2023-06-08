@@ -5,7 +5,7 @@ import PClassCardItems from "../PClassCardItems/PClassCardItems";
 const PopularClass = () => {
     const [popularClass, setPopularClass] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/Class')
+        fetch('https://assignment-server-12-tau.vercel.app/Class')
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);

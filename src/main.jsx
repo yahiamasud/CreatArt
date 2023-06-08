@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom/client'
 import Main from './Layout/Main.jsx';
 import Dashboard from './Layout/Dashboard.jsx';
 import Error from './Error/Error.jsx';
-
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,6 +14,9 @@ import Regetetion from './Pages/Regetetion/Regetetion.jsx';
 import AuthProviders from './providers/AuthProviders.jsx';
 import Class from './Pages/Class/Class';
 import Instructors from './Pages/Instructors/Instructors';
+import Manager from './Pages/DashboardMain/Manager/Manager';
+import Studernts from './Pages/DashboardMain/Studernts/Studernts';
+
 
 const router = createBrowserRouter([
   {
@@ -48,13 +50,20 @@ const router = createBrowserRouter([
     path: "/Dashboard",
     element:<Dashboard></Dashboard>,
     errorElement:<Error></Error>,
-    // children:[
-    //   {
-    //     path:"/",
-    //     element:<Dashboard></Dashboard>
-        
-    //   }
-    // ]
+    children:[
+      {
+        path:"/Dashboard/Instructors",
+        element:<Instructors></Instructors>
+      },
+      {
+        path:"/Dashboard/Manager",
+        element:<Manager></Manager>
+      },
+      {
+        path:"/Dashboard/Studernts",
+        element:<Studernts></Studernts>
+      }
+    ]
   },
 ]);
 
