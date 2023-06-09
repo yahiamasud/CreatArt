@@ -19,7 +19,7 @@ const PopularIntree = () => {
             <p className="text-2xl font-bold mb-5 pb-10">there are most best teacher</p>
              <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-10">
                 {
-                    popularIntree.map( (popular) => <PItreeItems popular={popular}></PItreeItems>)
+                    popularIntree.map( (popular,index) => <PItreeItems key={popular._id} popular={popular}></PItreeItems>)
                 }
              </div>
             

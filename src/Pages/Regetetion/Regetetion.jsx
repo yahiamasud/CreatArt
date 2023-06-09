@@ -35,7 +35,7 @@ const Regetetion = () => {
                 profile(name, photo)
                     .then(() => {
                         const saveUser = { name:name, email: email, }
-                        fetch('https://assignment-server-12-yahiamasud.vercel.app/users', {
+                        fetch('https://assignment-server-12-yahiamasud.vercel.app/Users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

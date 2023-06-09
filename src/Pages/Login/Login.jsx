@@ -48,7 +48,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 const saveUser = { name: loggedUser.displayName, email: loggedUser.email, }
-                fetch('https://assignment-server-12-yahiamasud.vercel.app/users', {
+                fetch('https://assignment-server-12-yahiamasud.vercel.app/Users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

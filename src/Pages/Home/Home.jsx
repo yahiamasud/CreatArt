@@ -10,7 +10,7 @@ const Home = () => {
             <Bannar></Bannar>
             <PopularIntree></PopularIntree>
             <PopularClass></PopularClass>
-            <Mysite ></Mysite>
+            <Mysite></Mysite>
         </div>
     );
 };

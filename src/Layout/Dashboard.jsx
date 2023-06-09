@@ -28,18 +28,17 @@ const Dashboard = () => {
 
                     {isAdmin&&<> <h1 className='text-1xl font-bold'>Admin Dashboard</h1>
                                 <div className="divider"></div>
-                                <li><Link to='/Dashboard/Manager' className='font-bold hover:bg-success'>manager</Link></li>
-                                <li><Link to='/Dashboard/ClassAdd' className='font-bold hover:bg-success'>Manage Classes</Link></li>
+                                <li><Link to='/Dashboard/ClassAdd'  className='font-bold hover:bg-success'>Manage Classes</Link></li>
                                 <li><Link to='/Dashboard/AllUser' className='font-bold hover:bg-success'>Manage Users</Link></li>
 </>}
                     {isStedent&&<> <h1 className='text-1xl font-bold'>Student Dashboard</h1>
                                 <div className="divider"></div>
-                                <li><Link to='/Dashboard/Studernts' className='font-bold hover:bg-success'>Studernts </Link></li>
                                 <li><Link to='/' className='font-bold hover:bg-success'>My Selected Classes</Link></li>
                                 <li><Link to='/' className='font-bold hover:bg-success'>My Enrolled Classes</Link></li></>}
 
 
-                    {isInstor&&<> <li><Link to='/Dashboard/Instructors' className='font-bold hover:bg-success'>instrueton</Link></li></>}
+                    {isInstor&&<><h1 className='text-1xl font-bold'>Student Dashboard</h1>
+                     <li><Link to='/Dashboard/Instructors' className='font-bold hover:bg-success'>instrueton</Link></li></>}
                     
                     {/* Sidebar content here */}
 

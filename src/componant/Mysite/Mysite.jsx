@@ -5,7 +5,7 @@ const Mysite = () => {
        <div>
         <h1 className="text-center text-5xl font-bold mt-10">School images in Photoshop</h1>
         <p className="text-center text-2xl font-bold p-5">Select the head you want to replace using a selection tool such as the Pen Tool</p>
-         <div className="hero   my-10 mx-auto ">
+         <div className="hero my-10 mx-auto ">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img src={imgs} className="max-w-sm rounded-lg shadow-2xl" />
           <div>
