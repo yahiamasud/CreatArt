@@ -16,52 +16,68 @@ import Class from './Pages/Class/Class';
 import Instructors from './Pages/Instructors/Instructors';
 import Manager from './Pages/DashboardMain/Manager/Manager';
 import Studernts from './Pages/DashboardMain/Studernts/Studernts';
+import AllUser from './Pages/DashboardMain/AllUser/AllUser';
+import PrivateRoute from './PrivateRouter/PrivateRoute';
+import ClassAdd from './Pages/DashboardMain/ClassAdd/ClassAdd';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<Main></Main>,
-    errorElement:<Error></Error>,
-    children:[
+    element: <Main></Main>,
+    errorElement: <Error></Error>,
+    children: [
       {
-        path:"/",
-        element:<Home></Home>,
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path:"/Login",
-        element:<Login></Login>
+        path: "/Login",
+        element: <Login></Login>
       },
       {
-        path:"/Regetetion",
-        element:<Regetetion></Regetetion>
+        path: "/Regetetion",
+        element: <Regetetion></Regetetion>
       },
       {
-        path:"/Class",
-        element:<Class></Class>
+        path: "/Class",
+        element: <Class></Class>
       },
       {
-        path:"/Instructors",
-        element:<Instructors></Instructors>
+        path: "/Instructors",
+        element: <Instructors></Instructors>
       }
     ]
   },
   {
     path: "/Dashboard",
-    element:<Dashboard></Dashboard>,
-    errorElement:<Error></Error>,
-    children:[
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    errorElement: <Error></Error>,
+    children: [
       {
-        path:"/Dashboard/Instructors",
-        element:<Instructors></Instructors>
+        path: "/Dashboard/Instructors",
+        element: <Instructors></Instructors>
       },
       {
-        path:"/Dashboard/Manager",
-        element:<Manager></Manager>
+        path: "/Dashboard/Manager",
+        element: <Manager></Manager>
       },
       {
-        path:"/Dashboard/Studernts",
-        element:<Studernts></Studernts>
+        path: "/Dashboard/Studernts",
+        element: <Studernts></Studernts>
+      },
+      {
+        path: "/Dashboard/AllUser",
+        element: <AllUser></AllUser>
+      },
+      {
+        path: "/Dashboard/ClassAdd",
+        element: <ClassAdd></ClassAdd>
       }
     ]
   },
@@ -71,7 +87,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
     <AuthProviders>
-     <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </AuthProviders>
   </React.StrictMode>,
 )

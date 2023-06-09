@@ -2,51 +2,51 @@ import React, { createContext, useEffect, useState } from 'react';
 import app from '../firebase/firebase.confing';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
-export const AuthContext =createContext(null);
+export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
 const googleAuthProvider = new GoogleAuthProvider();
 
-const AuthProviders = ({children}) => {
+const AuthProviders = ({ children }) => {
 
-    const [user, setUser]=useState(null);
-    const [loading ,setLoading]=useState(true);
-    
-    const createUser = (email,password)=>{
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
-    const singInGoogle =()=>{
+    const singInGoogle = () => {
         setLoading(true);
-        return signInWithPopup (auth, googleAuthProvider);
+        return signInWithPopup(auth, googleAuthProvider);
     };
 
-    const singIn = (email , password) => {
+    const singIn = (email, password) => {
         setLoading(true);
-        return signInWithEmailAndPassword(auth , email, password)
+        return signInWithEmailAndPassword(auth, email, password)
     };
-    
-    const logOut =()=>{
+
+    const logOut = () => {
         return signOut(auth);
     };
 
-    const profile =(name, photo)=>{
+    const profile = (name, photo) => {
         return updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo
         });
     }
 
-    useEffect(()=>{
-     const unsubscribe =   onAuthStateChanged( auth , loggedUser=>{ 
-        setUser(loggedUser);
-        setLoading(false);
-    })
-    return ()=>{
-        unsubscribe();
-    }
-        
-    },[])
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, loggedUser => {
+            setUser(loggedUser);
+            setLoading(false);
+        })
+        return () => {
+            unsubscribe();
+        }
+
+    }, [])
 
     const Authinfo = {
         user,
@@ -56,7 +56,7 @@ const AuthProviders = ({children}) => {
         singInGoogle,
         profile,
         logOut
-        
+
     };
     return (
         <AuthContext.Provider value={Authinfo}>
