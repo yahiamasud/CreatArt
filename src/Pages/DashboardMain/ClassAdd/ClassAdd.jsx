@@ -68,7 +68,7 @@ const ClassAdd = () => {
                             <label className="label">
                                 <span className="label-text">Available seats</span>
                             </label>
-                            <input type="text" placeholder="Available seats" name='AvailableSeats' className="input input-bordered" required />
+                            <input type="text" placeholder="seats" name='AvailableSeats' className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Add Class</button>

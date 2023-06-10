@@ -2,8 +2,7 @@
 const Studernts = () => {
     return (
         <div>
-            Studernts
-
+           <h1 className="text-5xl font-bold underline">Students</h1>
         </div>
     );
 };
