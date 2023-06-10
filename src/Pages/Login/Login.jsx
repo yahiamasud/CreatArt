@@ -11,6 +11,21 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/"
 
+    const [checktype , setChecktype ]= useState("password");
+    const [showhidetext, setShowhidetext]= useState("show");
+
+    const handleShowHigh=(e)=>{
+        const gettype = e.target.value;
+        if( gettype === "password"){
+            setChecktype('text');
+            setShowhidetext("Hide");
+        }
+        else{
+            setChecktype('password');
+            setShowhidetext("Show");
+        }
+    }
+
     const handlelogin = (event) => {
         event.preventDefault();
         const Form = event.target;
@@ -86,11 +101,13 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" name='password' className="input input-bordered" required />
-
+                            <div className='flex align-items-center '>
+                            <input  type={ checktype } placeholder="password" name='password' className="input w-full input-bordered" required /> <button value={checktype} onClick = {(e)=>handleShowHigh(e)} className='btn btn-primary' type='button'>{showhidetext}</button>
+                            </div>
                             <label className="label">
                                 <p className='text-red-500'>{error}</p>
                             </label>
+                            
                         </div>
                         <div className="form-control ">
                             <button className="btn btn-success  normal-case mx-12" type="submit">Login</button>
