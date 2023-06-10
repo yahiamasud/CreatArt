@@ -21,7 +21,7 @@ const Instructors = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr  className='border-black text-black font-1xl' >
+                        <tr  className='border-black  font-1xl' >
                             <th>#</th>
                             <th>Photo</th>
                             <th>Name</th>

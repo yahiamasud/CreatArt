@@ -87,19 +87,19 @@ const Login = () => {
 
     return (
         <div className="">
-            <h1 className='text-5xl font-bold text-center  p-5'>LOGING</h1>
+            <h1 className='text-5xl font-bold text-center   p-5'>LOGING</h1>
             <div className='Box flex  grid grid-cols-1 md:grid-cols-2 p-10 mx-auto' >
                 <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
                     <Form onSubmit={handlelogin} className="card-body  bg-sky-300 rounded">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-black">Email</span>
                             </label>
                             <input type="email" placeholder="email" name='email' className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text text-black">Password</span>
                             </label>
                             <div className='flex align-items-center '>
                             <input  type={ checktype } placeholder="password" name='password' className="input w-full input-bordered" required /> <button value={checktype} onClick = {(e)=>handleShowHigh(e)} className='btn btn-primary' type='button'>{showhidetext}</button>
@@ -117,7 +117,7 @@ const Login = () => {
                         </div>
                     </Form>
                     <label className="label">
-                        <p className='p-5 mr-5'> No account <Link to="/Regetetion" className=' bg-success rounded p-1'> Regestation page</Link></p>
+                        <p className='p-5 mr-5'> No account <Link to="/Regetetion" className=' bg-success rounded text-black p-1'> Regestation page</Link></p>
                     </label>
 
                 </div>
