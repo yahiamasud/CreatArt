@@ -30,8 +30,8 @@ const Instructors = () => {
                     </thead>
                     <tbody>
                         {
-                            instructors.map(instructor => <tr className='border-black'>
-                                <th></th>
+                            instructors.map((instructor,index) => <tr className='border-black'>
+                                <th>{index+1}</th>
                                 <td><img className="img-instor" src={instructor.image} alt="" /></td>
                                 <td>{instructor.name}</td>
                                 <td>{instructor.email}</td>

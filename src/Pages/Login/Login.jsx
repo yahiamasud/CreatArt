@@ -59,10 +59,10 @@ const Login = () => {
                     .then(data => {
                         if (data.insertedId) {
                             Form.reset();
-                          
+
                         }
                     })
-                    navigate(from, { replace: true });
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error)
@@ -104,7 +104,12 @@ const Login = () => {
                     </label>
 
                 </div>
-                <div className='text-center'><img src="https://lottiefiles.com/106680-login-and-sign-up" alt="" /></div>
+                <div className='text-center'>
+                    <div className=''>
+                        <h1 className='text-6xl font-bold m-5'>Welcome to OurPlatform!</h1>
+                        <p className='text-2xl font-bold'>Please enter your login credentials to access your account:</p>
+                    </div>
+                </div>
             </div>
         </div>
     );
