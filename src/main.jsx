@@ -23,6 +23,8 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import AllStudent from './Pages/DashboardMain/AllStudent/AllStudent';
+import Icon from './Pages/DashboardMain/Studernts/Icon/Icon';
 
 const queryClient = new QueryClient()
 
@@ -78,6 +80,14 @@ const router = createBrowserRouter([
       {
         path: "/Dashboard/ClassAdd",
         element: <ClassAdd></ClassAdd>
+      },
+      {
+        path: "/Dashboard/AllStudent",
+        element: <AllStudent></AllStudent>
+      },
+      {
+        path:'/Dashboard/',
+        element:<Icon></Icon>
       }
     ]
   },

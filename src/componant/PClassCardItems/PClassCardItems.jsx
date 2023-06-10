@@ -3,7 +3,6 @@ import './class.css'
 
 const PClassCardItems = ({popularC}) => {
     const { name, image, price, available} = popularC;
-    console.log(name);
     return (
         <div>
             <div className="card mx-auto  w-96 bg-base-100 shadow-xl">
