@@ -3,7 +3,7 @@ import './terc.css'
 const PItreeItems = ({popular,index}) => {
     const {name,image,email }= popular ;
     return (
-        <div className='flex mx-auto'>
+        <div className='flex  mx-auto'>
             <div className='text-center '>
                <img src={image} className='teacehrImage' alt="" />
                <h1>Name:-{name}</h1>
