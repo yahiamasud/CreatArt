@@ -3,13 +3,13 @@ import { Link, Outlet } from 'react-router-dom';
 // import useAdmin from '../hooks/useAdmin';
 import { BsFillHouseFill, BsClipboard2PlusFill, BsPersonBoundingBox, BsPeople, BsLayersFill, BsPersonBadge, BsPersonVideo, BsCheckCircleFill, BsPersonFillLock } from "react-icons/bs";
 import Reveal from 'react-awesome-reveal';
-import { Slide } from "react-awesome-reveal";
+// import useAdmin from '../hooks/useAdmin';
+
 
 
 const Dashboard = () => {
 
-    // const [isAdmin] = useAdmin();
-
+    // const [isAdmin]=useAdmin();
     // todo 
     const isAdmin = true;
     const isStedent = true;
@@ -31,7 +31,9 @@ const Dashboard = () => {
 
                     {/* show the ul */}
 
-                    {isAdmin && <> <h1 className='text-1xl flex align-items-center font-bold'> <Reveal effect="Zoom"><BsFillHouseFill></BsFillHouseFill><span>Admin Dashboard</span></Reveal> </h1>
+                    {/* {isAdmin ? <>hello admin</>:<>user</>} */}
+
+                    { isAdmin && <> <h1 className='text-1xl flex align-items-center font-bold'> <Reveal effect="Zoom"><BsFillHouseFill></BsFillHouseFill><span>Admin Dashboard</span></Reveal> </h1>
                         <li><Link to="/Dashboard/Manager" className='font-bold hover:bg-success'> <Reveal effect="Slide"><BsClipboard2PlusFill></BsClipboard2PlusFill><span> Manage Classes</span> </Reveal></Link></li>
                         <li><Link to='/Dashboard/AllUser' className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsPersonBoundingBox></BsPersonBoundingBox> <span>Manage Users</span></Reveal></Link></li>
                     </>}
