@@ -26,6 +26,7 @@ import {
 import AllStudent from './Pages/DashboardMain/AllStudent/AllStudent';
 import Icon from './Pages/DashboardMain/Studernts/Icon/Icon';
 import MySeleted from './Pages/DashboardMain/MySeleted/MySeleted';
+import Ply from './Pages/DashboardMain/Ply/Ply';
 
 const queryClient = new QueryClient()
 
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
       {
         path:'/Dashboard/MySeleted',
         element:<MySeleted></MySeleted>
+      },
+      {
+        path:'/Dashboard/Ply',
+        element:<Ply></Ply>
       }
     ]
   },

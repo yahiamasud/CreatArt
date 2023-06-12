@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const MySeleted = () => {
     const [selectClass, setselectClass] = useState([]);
@@ -33,7 +34,7 @@ const MySeleted = () => {
                                     <td>{user.name}</td>
                                     <td>{user.price}</td>
                                     <td>{user.seats}</td>
-                                    <td><button className='btn btn-secondary'>ply</button></td>
+                                    <td><Link to="/Dashboard/Ply"><button className='btn btn-secondary'>ply</button></Link></td>
                                 </tr>)
                             }
                         </tbody>
