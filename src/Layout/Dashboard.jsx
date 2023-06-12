@@ -30,20 +30,19 @@ const Dashboard = () => {
                 <ul className="menu p-4 w-50  h-full bg-green-300 text-black text-base-content">
 
                     {/* show the ul */}
-
                     {/* {isAdmin ? <>hello admin</>:<>user</>} */}
 
                     {isAdmin && <> <h1 className='text-1xl flex align-items-center font-bold'> <Reveal effect="Zoom"><BsFillHouseFill></BsFillHouseFill><span>Admin Dashboard</span></Reveal> </h1>
                         <li><Link to="/Dashboard/Manager" className='font-bold hover:bg-success'> <Reveal effect="Slide"><BsClipboard2PlusFill></BsClipboard2PlusFill><span> Manage Classes</span> </Reveal></Link></li>
                         <li><Link to='/Dashboard/AllUser' className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsPersonBoundingBox></BsPersonBoundingBox> <span>Manage Users</span></Reveal></Link></li>
                     </>}
-                    <div className="divider"></div>
+                    <div className="divider bg-black"></div>
 
                     {isInstor && <><h1 className='text-1xl font-bold flex align-items-center'> <Reveal effect="Zoom"> <BsFillHouseFill></BsFillHouseFill><span>instrueton Dashboard </span></Reveal></h1>
                         <li><Link to='/Dashboard/Instructors' className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsPersonBadge></BsPersonBadge><span>instrueton</span></Reveal></Link></li>
                         <li><Link to='/Dashboard/ClassAdd' className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsLayersFill></BsLayersFill><span>add Classes</span></Reveal></Link></li>
                         <li><Link to='/Dashboard/AllStudent' className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsPeople></BsPeople><span>All Studen</span></Reveal></Link></li></>}
-                        <div className="divider"></div>
+                        <div className="divider bg-black"></div>
                     {isStedent && <> <h1 className='text-1xl font-bold flex align-items-center'><Reveal effect="Zoom"> <BsFillHouseFill></BsFillHouseFill><span> Student Dashboard </span></Reveal></h1>
 
                         <li><Link to='/Dashboard/Studernts' className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsPersonVideo></BsPersonVideo><span>Student</span></Reveal></Link></li>
@@ -52,7 +51,7 @@ const Dashboard = () => {
                     
                     {/* Sidebar content here */}
 
-                    <div className="divider"></div>
+                    <div className="divider bg-black"></div>
                     <li><Link to="/" className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsFillHouseFill></BsFillHouseFill><span>Home</span></Reveal></Link></li>
 
                 </ul>
