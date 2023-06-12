@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ClassAdmin from '../../../componant/ClassAdmin/ClassAdmin';
 
 const Manager = () => {
+    // this is the data loader
     const [datas , setDatas] = useState([]);
     useEffect(() => {
         fetch('https://assignment-server-12-tau.vercel.app/class')

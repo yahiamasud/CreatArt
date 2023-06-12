@@ -1,5 +1,6 @@
 
 const ClassAdmin = ({ data }) => {
+    // this is the data loader params and show
     console.log(data);
     const {name,image,price,available,seats,_id} = data
     return (

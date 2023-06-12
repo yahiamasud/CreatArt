@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Link } from 'react-router-dom';
 
 const ClassAdd = () => {
+    // this is the from data colader
     const handleAddClass = (event) => {
         event.preventDefault();
         const Form = event.target;
