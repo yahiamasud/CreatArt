@@ -26,29 +26,31 @@ const Regetetion = () => {
             return
         }
 
-
         createUser(email, password)
             .then(result => {
                 // this is the add creat user
                 const createdUser = result.user;
-              
+
                 profile(name, photo)
                     .then(() => {
-                        const saveUser = { name:name, email: email, }
-                        fetch('https://assignment-server-12-yahiamasud.vercel.app/Users', {
+                        // save data
+                        const saveUser = { name: name, email: email, }
+                        fetch('https://assignment-server-12-yahiamasud.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
                             },
                             body: JSON.stringify(saveUser)
                         })
-                        .then(res=>res.json())
-                        .then(data => {
-                            if (data.insertedId) {
-                                Form.reset();
-                                navigate('/');
-                            }
-                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    Form.reset();
+                                    navigate('/');
+                                }
+                            })
+                        // save data
+                        
                     })
                     .catch((error) => {
 
@@ -57,7 +59,7 @@ const Regetetion = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                // ..
+
             });
     }
     return (
@@ -72,7 +74,7 @@ const Regetetion = () => {
                             </label>
                             <input type="text" placeholder="name" name='name' className="input input-bordered" required />
                         </div>
-                        
+
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -98,8 +100,8 @@ const Regetetion = () => {
                             <input type="text" placeholder="photo" name='photo' className="input input-bordered" required />
                         </div>
                         <label className="label">
-                                <p className='text-red-500'>{error}</p>
-                            </label>
+                            <p className='text-red-500'>{error}</p>
+                        </label>
                         <div className="form-control mt-6">
                             <button className="btn btn-success normal-case">SingUp</button>
                         </div>
