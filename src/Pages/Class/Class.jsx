@@ -2,7 +2,9 @@
 import ClsCard from '../../componant/clsCard/ClsCard';
 import { useEffect, useState } from "react";
 
+
 const Class = () => {
+    // this is the data loade ing
 
     const [datas , setDatas] = useState([]);
     useEffect(() => {

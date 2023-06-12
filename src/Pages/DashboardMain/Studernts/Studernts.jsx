@@ -1,4 +1,4 @@
-
+// this is the student data
 const Studernts = () => {
     return (
         <div className="">

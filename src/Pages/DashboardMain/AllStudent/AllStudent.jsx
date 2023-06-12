@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const AllStudent = () => {
+    // All studern data loade
     const [datas, setDatas] = useState([]);
     useEffect(() => {
         fetch('https://assignment-server-12-yahiamasud.vercel.app/users')
