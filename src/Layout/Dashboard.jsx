@@ -46,7 +46,7 @@ const Dashboard = () => {
                     {isStedent && <> <h1 className='text-1xl font-bold flex align-items-center'><Reveal effect="Zoom"> <BsFillHouseFill></BsFillHouseFill><span> Student Dashboard </span></Reveal></h1>
 
                         <li><Link to='/Dashboard/Studernts' className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsPersonVideo></BsPersonVideo><span>Student</span></Reveal></Link></li>
-                        <li><Link to='' className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsCheckCircleFill></BsCheckCircleFill><span>My Selected Classes</span></Reveal></Link></li>
+                        <li><Link to='/Dashboard/MySeleted' className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsCheckCircleFill></BsCheckCircleFill><span>My Selected Classes</span></Reveal></Link></li>
                         <li><Link to='' className='font-bold hover:bg-success'><Reveal effect="Zoom"><BsPersonFillLock></BsPersonFillLock><span>My Enrolled Classes</span></Reveal></Link></li></>}
                     
                     {/* Sidebar content here */}

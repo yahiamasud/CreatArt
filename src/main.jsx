@@ -25,6 +25,7 @@ import {
 } from '@tanstack/react-query'
 import AllStudent from './Pages/DashboardMain/AllStudent/AllStudent';
 import Icon from './Pages/DashboardMain/Studernts/Icon/Icon';
+import MySeleted from './Pages/DashboardMain/MySeleted/MySeleted';
 
 const queryClient = new QueryClient()
 
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
       {
         path:'/Dashboard/',
         element:<Icon></Icon>
+      },
+      {
+        path:'/Dashboard/MySeleted',
+        element:<MySeleted></MySeleted>
       }
     ]
   },
